@@ -23,7 +23,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^chirps/', include('chirp.urls')),
     url(r'^logout/', 'django.contrib.auth.views.logout', {'next_page':"/chirps/"}, name='logout'),
-    url(r'^api/', include('api.urls')),
     url(r'^donate/$', UserDonate.as_view()),
     url('^', include('django.contrib.auth.urls')),
 

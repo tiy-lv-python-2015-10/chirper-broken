@@ -6,7 +6,7 @@ from chirp.models import Chirp
 class ChirpForm(forms.ModelForm):
     class Meta:
         model = Chirp
-        fields = ('title', 'message', 'image')
+        fields = ('title', 'image')
         widgets = {
             'message': Textarea(attrs={'rows': 2})
         }
