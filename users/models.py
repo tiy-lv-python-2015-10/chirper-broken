@@ -17,6 +17,7 @@ class Profile(models.Model):
     )
 
     user = models.OneToOneField(User)
+    shoes = models.BooleanField(default=False)
     age = models.IntegerField(validators=[validate_age])
     gender = models.CharField(max_length=8, choices=GENDER_CHOICES,
                               default=MALE)
