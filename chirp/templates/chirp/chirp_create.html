@@ -1,0 +1,18 @@
+{% extends 'chirp/chirp_base.html' %}
+
+{% block content %}
+    <h2>Create Chirp</h2>
+    <!-- Django does not provide the form tag -->
+    <form method="post" action="{% url 'chirp_create' %}" class="form" enctype="multipart/form-data">
+        <!-- CSRF Token prevents cross site attacks and is required -->
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+            {{ field.errors }}
+            {{ field.label_tag }}{{ field }}
+            </div>
+        {% endfor %}
+        <!-- Django does not insert a submit button -->
+        <input type="submit" value="Chirp!" name="submit" class="btn btn-primary">
+    </form>
+{% endblock %}
